@@ -2,10 +2,10 @@ import React, { ReactElement } from "react";
 import "./projects.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import image1 from "../../photos/RoboFriendsCap.jpg";
-import image2 from "../../photos/PennyGalleryCapture2.jpg";
-import image3 from "../../photos/SmartBrainCapture.jpg";
-import image5 from "../../photos/CrownClothingHomepage.png";
+import image1 from "../../../public/RoboFriendsCap.jpg";
+import image2 from "../../../public/PennyGalleryCapture2.jpg";
+import image3 from "../../../public/SmartBrainCapture.jpg";
+import image5 from "../../../public/CrownClothingHomepage.png";
 
 interface ProjectInfo {
   projectId: number;

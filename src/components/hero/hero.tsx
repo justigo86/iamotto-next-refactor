@@ -2,7 +2,7 @@ import React, { ReactElement, useRef, useEffect } from "react";
 import { Link } from "react-scroll";
 // import Typed from "react-typed";
 import { FaGithub, FaLinkedin, FaEnvelope, FaRegFileAlt } from "react-icons/fa";
-import resume from "../../photos/Justin_Otto_Resume.pdf";
+import resume from "../../../public/Justin_Otto_Resume.pdf";
 import "./hero.scss";
 import Typed from "typed.js";
 

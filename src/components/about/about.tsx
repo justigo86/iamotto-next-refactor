@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import image1 from "../../photos/DSC4721v2.jpg";
+import image1 from "../../../public/DSC4721v2.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./about.scss";
