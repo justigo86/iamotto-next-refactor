@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "index.scss";
+import "../index.scss";
 
 export const metadata: Metadata = {
   title: "React App",

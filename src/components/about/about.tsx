@@ -33,7 +33,7 @@ const About = (): ReactElement => {
         </div>
         <div className="about-image-container" data-aos="fade-left">
           <p className="pup-title banzai-title">BANZAI</p>
-          <img className="about-image" src={image1} alt="" />
+          <img className="about-image" src={image1.src} alt="" />
           <p className="pup-title penny-title">
             PENNY <p>(sans snot)</p>
           </p>

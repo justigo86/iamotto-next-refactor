@@ -114,7 +114,7 @@ const Hero = (): ReactElement => {
         <li className="hero-icons">
           <a
             id="resume"
-            href={resume}
+            href={resume.src}
             target="_blank"
             rel="noreferrer noopener"
           >

@@ -1,4 +1,4 @@
-import "../../index.css";
+import "../../index.scss";
 import { ClientOnly } from "./client";
 
 // server component and static asset - will import global CSS

@@ -6,6 +6,7 @@ import image1 from "../../../public/RoboFriendsCap.jpg";
 import image2 from "../../../public/PennyGalleryCapture2.jpg";
 import image3 from "../../../public/SmartBrainCapture.jpg";
 import image5 from "../../../public/CrownClothingHomepage.png";
+import { StaticImageData } from "next/image";
 
 interface ProjectInfo {
   projectId: number;
@@ -13,7 +14,7 @@ interface ProjectInfo {
   projectDetails: string;
   projectLink1: string;
   projectLink2: string;
-  projectImg: string;
+  projectImg: string | StaticImageData;
 }
 
 const cardInfo: ProjectInfo[] = [
@@ -27,7 +28,7 @@ const cardInfo: ProjectInfo[] = [
       Back End: Firebase/Firestore`,
     projectLink1: "https://justigo86.github.io/crd_capstone_dev/",
     projectLink2: "https://github.com/justigo86/crd_capstone_dev",
-    projectImg: image5,
+    projectImg: image5.src,
   },
   {
     projectId: 3,
@@ -39,7 +40,7 @@ const cardInfo: ProjectInfo[] = [
       Back End: Node.js, Express.js, PostgreSQL`,
     projectLink1: "http://smart-brain-jotto.herokuapp.com/",
     projectLink2: "https://github.com/justigo86/SmartBrain",
-    projectImg: image3,
+    projectImg: image3.src,
   },
   {
     projectId: 2,
@@ -50,7 +51,7 @@ const cardInfo: ProjectInfo[] = [
       Back End: Firebase Firestore`,
     projectLink1: "https://justigo86.github.io/gallery4pen/",
     projectLink2: "https://github.com/justigo86/gallery4pen",
-    projectImg: image2,
+    projectImg: image2.src,
   },
   {
     projectId: 1,
@@ -60,7 +61,7 @@ const cardInfo: ProjectInfo[] = [
       Front End: React (HTML5, CSS3, JSX)`,
     projectLink1: "https://justigo86.github.io/robofriends/",
     projectLink2: "https://github.com/justigo86/SmartBrain",
-    projectImg: image1,
+    projectImg: image1.src,
   },
 ];
 
