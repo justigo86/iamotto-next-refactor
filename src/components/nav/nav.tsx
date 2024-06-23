@@ -57,14 +57,14 @@ const Nav = (): ReactElement => {
     <>
       <nav
         // className="navbar-container"
-        className="sticky top-0 h-12 flex items-center justify-center overflow-hidden py-10 px-8 z-10 transition-all duration-700"
+        className="h-24 sticky top-0 md:h-12 flex items-center justify-center overflow-hidden py-10 px-8 z-10 transition-all duration-700"
         style={{
           background: expandNav || !showBurger ? "hsla(0, 0%, 0%, .5)" : "none",
         }}
       >
         <div
           // className="navbar-menu"
-          className="h-12 w-12 cursor-pointer m-4 fixed flex justify-center items-center top-0 left-0 transition-all duration-100"
+          className="m-2 h-12 w-12 cursor-pointer md:m-4 fixed flex justify-center items-center top-0 left-0 transition-all duration-100"
           onClick={() => handleClick()}
           style={{ transform: showBurger ? "none" : "translateY(-50vh)" }}
         >
@@ -80,7 +80,7 @@ const Nav = (): ReactElement => {
         </div>
         <div
           // className="navbar"
-          className="flex justify-around items-center w-10/12 transition-all duration-500"
+          className=" flex flex-col md:flex-row justify-around items-center w-10/12 transition-all duration-500"
           style={{
             transform: expandNav || !showBurger ? "none" : "translateY(-50vh)",
           }}
@@ -93,9 +93,12 @@ const Nav = (): ReactElement => {
                 smooth={true}
                 duration={1000}
                 offset={-50}
-                className="navbar-tags"
+                // className="navbar-tags"
+                className="group text-white font-bold uppercase no-underline md:text-3xl transition-all duration-500 cursor-pointer"
               >
-                <span>0{link.id}</span>
+                <span className="text-blue-600 align-top group-hover:text-pink-500">
+                  0{link.id}
+                </span>
                 {link.path}
               </Link>
             );
