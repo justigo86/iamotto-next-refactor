@@ -56,23 +56,31 @@ const Nav = (): ReactElement => {
   return (
     <>
       <nav
-        className="navbar-container"
+        // className="navbar-container"
+        className="sticky top-0 h-12 flex items-center justify-center overflow-hidden py-10 px-8 z-10 transition-all duration-700"
         style={{
           background: expandNav || !showBurger ? "hsla(0, 0%, 0%, .5)" : "none",
         }}
       >
         <div
-          className="navbar-menu"
+          // className="navbar-menu"
+          className="h-12 w-12 cursor-pointer m-4 fixed flex justify-center items-center top-0 left-0 transition-all duration-100"
           onClick={() => handleClick()}
           style={{ transform: showBurger ? "none" : "translateY(-50vh)" }}
         >
           <div
-            className={expandNav ? "burger burger-clicked" : "burger"}
+            // className={expandNav ? "burger burger-clicked" : "burger"}
+            className={
+              expandNav
+                ? "w-8 h-0 bg-white transition-all duration-500 before:content-[''] before:absolute before:w-10 before:h-1 before:bg-white before:rounded-full before:translate-y-0 before:rotate-45 before:transition-all before:duration-500 after:content-[''] after:absolute after:w-10 after:h-1 after:bg-white after:rounded-full after:after:translate-y-0 after:-rotate-45 after:transition-all after:duration-500"
+                : "w-8 h-1 bg-white rounded-full transition-all duration-500 before:mt-0.5 before:content-[''] before:absolute before:w-10 before:h-1 before:bg-white before:rounded-full before:-translate-y-4 before:transition-all before:duration-500 after:-mt-0.5 after:content-[''] after:absolute after:w-10 after:h-1 after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-500"
+            }
             onClick={() => handleClick()}
           ></div>
         </div>
         <div
-          className="navbar"
+          // className="navbar"
+          className="flex justify-around items-center w-10/12 transition-all duration-500"
           style={{
             transform: expandNav || !showBurger ? "none" : "translateY(-50vh)",
           }}
