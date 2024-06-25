@@ -44,47 +44,70 @@ const Hero = (): ReactElement => {
   return (
     <div
       id="home"
-      className="h-[110vh] text-left text-white text-3xl overflow-hidden relative bg-transparent mt-36 text-shadow-md"
+      //className="hero-container"
+      className="h-[110vh] text-left text-white text-lg md:text-xl overflow-hidden relative bg-transparent mt-36 text-shadow-md"
     >
-      <div className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale brightness-[0.45]"></div>
-      <div className="relative top-88 left-28 font-extrabold animate-[heroLoad_0.7s]">
-        <h1 className="inline-block text-8xl mb-2">J. Otto</h1>
+      <div
+        //className="hero-background-img"
+        className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale brightness-[0.45]"
+      ></div>
+      <div
+        //className="intro-container"
+        className="relative md:top-88 md:left-28 top-24 left-5 font-extrabold animate-[heroLoad_0.7s]"
+      >
+        <h1 className="inline-block text-6xl mb-2">J. Otto</h1>
         <p className="mb-2">Web Developer</p>
-        <p className="mb-2">
+        <p
+          //className="hero-descriptions"
+          className="mb-2"
+        >
           and I&nbsp;
-          <span className="font-bold" ref={el}></span>
+          <span
+            //className="typed"
+            className="font-bold"
+            ref={el}
+          ></span>
         </p>
-        <div className="flex items-center space-x-2">
-          <Link to="projects" smooth={true} duration={1000}>
+        <div
+          //className="hero-links"
+          className="flex items-center space-x-2"
+        >
+          <Link
+            //className="hero-link"
+            to="projects"
+            smooth={true}
+            duration={1000}
+          >
             <a
-              className="text-blue-600 hover:text-pink-500 hover:text-shadow-md"
+              //className="hero-link-atag"
+              className="text-blue-600 hover:text-pink-500"
               href="#projects"
             >
               Projects
             </a>
           </Link>
-          <span className="mx-1 text-white bg-clip-text text-shadow-md">/</span>
+          <span className="mx-1 text-white">/</span>
           <Link to="about" smooth={true} duration={1000}>
-            <a
-              className="text-blue-600 hover:text-pink-500 hover:text-shadow-md"
-              href="#about"
-            >
+            <a className="text-blue-600 hover:text-pink-500" href="#about">
               About
             </a>
           </Link>
-          <span className="mx-1 text-white bg-clip-text text-shadow-md">/</span>
+          <span className="mx-1 text-white">/</span>
           <Link to="connect" smooth={true} duration={1000}>
-            <a
-              className="text-blue-600 hover:text-pink-500 hover:text-shadow-md"
-              href="#connect"
-            >
+            <a className="text-blue-600 hover:text-pink-500" href="#connect">
               Connect
             </a>
           </Link>
         </div>
       </div>
-      <ul className="fixed right-1 bottom-2 list-none z-10 flex flex-col items-end space-y-2">
-        <li className="mr-2">
+      <ul
+        //className="hero-icons-container"
+        className="fixed right-1 bottom-2 list-none z-10 flex flex-col items-end space-y-2"
+      >
+        <li
+          //className="hero-icons"
+          className="mr-2"
+        >
           <a
             id="git"
             href="https://github.com/justigo86"
