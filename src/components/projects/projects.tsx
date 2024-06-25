@@ -68,77 +68,32 @@ const cardInfo: ProjectInfo[] = [
 const Projects = (): ReactElement => {
   AOS.init();
   return (
-    // <div id="projects" className="projects-container">
-    //   <h1 className="project-header-title" data-aos="fade-right">
-    //     Projects
-    //   </h1>
-    //   <div className="project-card-container">
-    //     {cardInfo.map((card: ProjectInfo) => {
-    //       return (
-    //         <div
-    //           key={card.projectId}
-    //           className="project-card"
-    //           data-aos="fade-left"
-    //         >
-    //           <div
-    //             className="project-card-header"
-    //             style={{
-    //               backgroundImage: `url("${card.projectImg}")`,
-    //               backgroundSize: "cover",
-    //               backgroundPosition: "center top",
-    //             }}
-    //           >
-    //             <div className="project-details">
-    //               <p className="project-details-text">{card.projectDetails}</p>
-    //             </div>
-    //           </div>
-    //           <div className="project-card-footer">
-    //             <p className="project-footer-title">{card.projectTitle}</p>
-    //             <div className="project-footer-links-container">
-    //               <div className="project-footer-link">
-    //                 <a
-    //                   href={card.projectLink1}
-    //                   target="_blank"
-    //                   rel="noreferrer"
-    //                 >
-    //                   DEMO
-    //                 </a>
-    //                 <span> | </span>
-    //                 <a
-    //                   href={card.projectLink2}
-    //                   target="_blank"
-    //                   rel="noreferrer"
-    //                 >
-    //                   GITHUB
-    //                 </a>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-    // </div>
-
     <div
       id="projects"
+      //className="projects-container"
       className="flex flex-col items-center justify-center min-h-[80vh] overflow-hidden mb-[10vh]"
     >
       <h1
-        className="my-[5vh] text-white font-extrabold drop-shadow-md"
+        //className="project-header-title"
+        className="my-[5vh] text-3xl md:text-4xl text-white font-extrabold drop-shadow-md"
         data-aos="fade-right"
       >
         Projects
       </h1>
-      <div className="flex items-center justify-center flex-wrap md:flex-col">
+      <div
+        //className="project-card-container"
+        className="flex items-center justify-center flex-col md:flex-wrap"
+      >
         {cardInfo.map((card: ProjectInfo) => {
           return (
             <div
               key={card.projectId}
-              className="border-2 border-white flex flex-col items-center justify-center relative h-[39vh] w-[30vw] rounded-[30px] overflow-hidden my-[1vh] mx-[1vw] md:w-[90vw] md:min-w-[15rem] md:my-4"
+              //className="project-card"
+              className="border-2 border-white flex flex-col items-center justify-center relative h-[50vh] w-[90vw] md:w-[50vw] rounded-[30px] overflow-hidden md:my-4 my-[1.5vh] mx-[1vw] min-w-[15rem]"
               data-aos="fade-left"
             >
               <div
+                //className="project-card-header"
                 className="flex flex-col items-center justify-center w-full h-full filter grayscale transition duration-300 ease-in-out"
                 style={{
                   backgroundImage: `url("${card.projectImg}")`,
@@ -146,18 +101,36 @@ const Projects = (): ReactElement => {
                   backgroundPosition: "center top",
                 }}
               >
-                <div className="w-[90%] bg-black bg-opacity-50 rounded-[20px] transform scale-0 transition duration-500 ease-in-out text-white whitespace-pre-wrap">
-                  <p className="text-center my-[4%] font-medium text-sm md:text-base">
+                <div
+                  //className="project-details"
+                  className="w-[90%] bg-black bg-opacity-50 rounded-[20px] transform scale-0 transition duration-500 ease-in-out text-white whitespace-pre-wrap"
+                >
+                  <p
+                    //className="project-details-text"
+                    className="text-center my-[4%] font-medium text-sm md:text-base"
+                  >
                     {card.projectDetails}
                   </p>
                 </div>
               </div>
-              <div className="h-[8vh] w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bottom-[15vh] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition duration-500 ease-in-out md:w-[60vw]">
-                <p className="text-white font-bold text-base md:text-lg drop-shadow-md">
+              <div
+                //className="project-card-footer"
+                className="h-[8vh] w-[60vw] md:w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bottom-[18vh] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition duration-500 ease-in-out"
+              >
+                <p
+                  //className="project-footer-title"
+                  className="text-white font-bold text-base md:text-lg drop-shadow-md"
+                >
                   {card.projectTitle}
                 </p>
-                <div className="transform scale-0 transition duration-500 ease-in-out h-0 flex justify-center items-center">
-                  <div className="flex">
+                <div
+                  //className="project-footer-links-container"
+                  className="transform scale-0 transition duration-500 ease-in-out h-0 flex justify-center items-center"
+                >
+                  <div
+                    //className="project-footer-link"
+                    className="flex"
+                  >
                     <a
                       href={card.projectLink1}
                       target="_blank"
@@ -187,3 +160,8 @@ const Projects = (): ReactElement => {
 };
 
 export default Projects;
+
+// Custom Heights and Margins: Tailwind does not have built-in classes for certain heights or margins, so you need to add these values to the Tailwind configuration.
+// Animations: Defined custom keyframes and animations in the Tailwind configuration.
+// Text Shadow: Tailwind does not natively support text shadows, so a plugin like tailwindcss-textshadow can be used.
+// Colors: For hover effects with gradients and custom colors, directly use Tailwind's utility classes and extended configurations.
