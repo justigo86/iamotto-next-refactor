@@ -75,7 +75,7 @@ const Projects = (): ReactElement => {
     >
       <h1
         //className="project-header-title"
-        className="my-[5vh] text-3xl md:text-4xl text-white font-extrabold text-shadow-md"
+        className="my-[6vh] text-3xl md:text-4xl text-white font-extrabold text-shadow-md"
         data-aos="fade-right"
       >
         Projects

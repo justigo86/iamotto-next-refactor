@@ -45,11 +45,11 @@ const Hero = (): ReactElement => {
     <div
       id="home"
       //className="hero-container"
-      className="h-[110vh] text-left text-white text-lg md:text-xl overflow-hidden relative bg-transparent -mt-36 text-shadow-md"
+      className="h-[110vh] text-left text-white text-lg md:text-2xl overflow-hidden relative bg-transparent -mt-36 text-shadow-md mb-[20vh]"
     >
       <div
         //className="hero-background-img"
-        className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale(40%) brightness-50"
+        className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale-40 brightness-50"
         style={{
           backgroundImage: `url("${image1.src}")`,
           backgroundSize: "cover",
@@ -60,7 +60,7 @@ const Hero = (): ReactElement => {
         //className="intro-container"
         className="relative md:left-28 top-96 left-5 font-extrabold animate-[heroLoad_0.7s]"
       >
-        <h1 className="inline-block text-6xl mb-2">J. Otto</h1>
+        <h1 className="inline-block text-7xl mb-2">J. Otto</h1>
         <p className="mb-2">Web Developer</p>
         <p
           //className="hero-descriptions"
