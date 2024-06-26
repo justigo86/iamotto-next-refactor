@@ -75,7 +75,7 @@ const Projects = (): ReactElement => {
     >
       <h1
         //className="project-header-title"
-        className="my-[5vh] text-3xl md:text-4xl text-white font-extrabold drop-shadow-md"
+        className="my-[5vh] text-3xl md:text-4xl text-white font-extrabold text-shadow-md"
         data-aos="fade-right"
       >
         Projects
@@ -119,7 +119,7 @@ const Projects = (): ReactElement => {
               >
                 <p
                   //className="project-footer-title"
-                  className="text-white font-bold text-base md:text-lg drop-shadow-md"
+                  className="text-white font-bold text-base md:text-lg text-shadow-md"
                 >
                   {card.projectTitle}
                 </p>

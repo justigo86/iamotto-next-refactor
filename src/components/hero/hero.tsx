@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaRegFileAlt } from "react-icons/fa";
 import resume from "../../../public/Justin_Otto_Resume.pdf";
 import "./hero.scss";
 import Typed from "typed.js";
-// import image1 from "../../../public/coffee1.jpg";
+import image1 from "../../../public/coffee1.jpg";
 
 const intros = [
   "am committed to improving every day.",
@@ -45,15 +45,20 @@ const Hero = (): ReactElement => {
     <div
       id="home"
       //className="hero-container"
-      className="h-[110vh] text-left text-white text-lg md:text-xl overflow-hidden relative bg-transparent mt-36 text-shadow-md"
+      className="h-[110vh] text-left text-white text-lg md:text-xl overflow-hidden relative bg-transparent -mt-36 text-shadow-md"
     >
       <div
         //className="hero-background-img"
-        className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale brightness-[0.45]"
+        className="absolute bg-hero bg-no-repeat bg-cover bg-center w-full h-full grayscale(40%) brightness-50"
+        style={{
+          backgroundImage: `url("${image1.src}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
       ></div>
       <div
         //className="intro-container"
-        className="relative md:top-88 md:left-28 top-24 left-5 font-extrabold animate-[heroLoad_0.7s]"
+        className="relative md:left-28 top-96 left-5 font-extrabold animate-[heroLoad_0.7s]"
       >
         <h1 className="inline-block text-6xl mb-2">J. Otto</h1>
         <p className="mb-2">Web Developer</p>
@@ -113,9 +118,9 @@ const Hero = (): ReactElement => {
             href="https://github.com/justigo86"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-white hover:text-[#0473fc]"
+            className="text-white hover:text-[#0473fc] w-20 h-20"
           >
-            <FaGithub />
+            <FaGithub className="w-8 h-8" />
           </a>
         </li>
         <li className="mr-2">
@@ -126,7 +131,7 @@ const Hero = (): ReactElement => {
             rel="noreferrer noopener"
             className="text-white hover:text-[#7b00ac]"
           >
-            <FaEnvelope />
+            <FaEnvelope className="w-8 h-8" />
           </a>
         </li>
         <li className="mr-2">
@@ -137,7 +142,7 @@ const Hero = (): ReactElement => {
             rel="noreferrer noopener"
             className="text-white hover:text-[#bc0098]"
           >
-            <FaLinkedin />
+            <FaLinkedin className="w-8 h-8" />
           </a>
         </li>
         <li className="mr-2">
@@ -148,7 +153,7 @@ const Hero = (): ReactElement => {
             rel="noreferrer noopener"
             className="text-white hover:text-[#ff0099]"
           >
-            <FaRegFileAlt />
+            <FaRegFileAlt className="w-8 h-8" />
           </a>
         </li>
       </ul>

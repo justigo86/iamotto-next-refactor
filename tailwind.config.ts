@@ -13,10 +13,6 @@ const config = {
   darkMode: ["class"], // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: {
-        // prettier-ignore
-        'hero': "url('/src/images/coffee1.jpg')",
-      },
       spacing: {
         "88": "22rem",
       },
