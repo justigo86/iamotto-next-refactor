@@ -6,6 +6,7 @@ import resume from "../../../public/Justin_Otto_Resume.pdf";
 import "./hero.scss";
 import Typed from "typed.js";
 import image1 from "../../../public/coffee1.jpg";
+import { motion } from "framer-motion";
 
 const intros = [
   "am committed to improving every day.",
@@ -113,48 +114,56 @@ const Hero = (): ReactElement => {
           //className="hero-icons"
           className="mr-2"
         >
-          <a
-            id="git"
-            href="https://github.com/justigo86"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-white hover:text-[#0473fc] w-20 h-20"
-          >
-            <FaGithub className="w-8 h-8" />
-          </a>
+          <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+            <a
+              id="git"
+              href="https://github.com/justigo86"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-white hover:text-[#0473fc] w-20 h-20"
+            >
+              <FaGithub className="w-8 h-8" />
+            </a>
+          </motion.div>
         </li>
         <li className="mr-2">
-          <a
-            id="mail"
-            href="mailto: justigo86@gmail.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-white hover:text-[#7b00ac]"
-          >
-            <FaEnvelope className="w-8 h-8" />
-          </a>
+          <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+            <a
+              id="mail"
+              href="mailto: justigo86@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-white hover:text-[#7b00ac]"
+            >
+              <FaEnvelope className="w-8 h-8" />
+            </a>
+          </motion.div>
         </li>
         <li className="mr-2">
-          <a
-            id="linked"
-            href="https://www.linkedin.com/in/justin-otto-m-s-ed-s-60b449100"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-white hover:text-[#bc0098]"
-          >
-            <FaLinkedin className="w-8 h-8" />
-          </a>
+          <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+            <a
+              id="linked"
+              href="https://www.linkedin.com/in/justin-otto-m-s-ed-s-60b449100"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-white hover:text-[#bc0098]"
+            >
+              <FaLinkedin className="w-8 h-8" />
+            </a>
+          </motion.div>
         </li>
         <li className="mr-2">
-          <a
-            id="resume"
-            href={resume.src}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-white hover:text-[#ff0099]"
-          >
-            <FaRegFileAlt className="w-8 h-8" />
-          </a>
+          <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+            <a
+              id="resume"
+              href={resume.src}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-white hover:text-[#ff0099]"
+            >
+              <FaRegFileAlt className="w-8 h-8" />
+            </a>
+          </motion.div>
         </li>
       </ul>
     </div>

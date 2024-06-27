@@ -5,6 +5,7 @@ import Hero from "../hero/hero";
 import Projects from "../projects/projects";
 import About from "../about/about";
 import Connect from "../connect/connect";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface LinkInterface {
   id: number;
@@ -81,28 +82,43 @@ const Nav = (): ReactElement => {
         <div
           // className="navbar"
           className=" flex flex-col md:flex-row justify-around items-center w-10/12 transition-all duration-500"
-          style={{
-            transform: expandNav || !showBurger ? "none" : "translateY(-50vh)",
-          }}
+          // style={{ -- removed style to utilize AnimatePresence/motion
+          //   transform: expandNav || !showBurger ? "none" : "translateY(-50vh)",
+          // }}
         >
-          {links.map((link: LinkInterface) => {
-            return (
-              <Link
-                key={link.id}
-                to={link.path}
-                smooth={true}
-                duration={1000}
-                offset={-50}
-                // className="navbar-tags"
-                className="group text-white font-bold uppercase no-underline md:text-3xl transition-all duration-500 cursor-pointer"
-              >
-                <span className="text-blue-600 align-top group-hover:text-pink-500">
-                  0{link.id}
-                </span>
-                {link.path}
-              </Link>
-            );
-          })}
+          <AnimatePresence>
+            {links.map((link: LinkInterface, idx) => {
+              return (
+                <Link
+                  to={link.path}
+                  smooth={true}
+                  duration={1000}
+                  offset={-50}
+                  // className="navbar-tags"
+                  className="group text-white font-bold uppercase no-underline md:text-3xl transition-all duration-500 cursor-pointer"
+                  key={link.id}
+                >
+                  {(expandNav || !showBurger) && (
+                    <motion.div
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.2 + idx / 10,
+                      }}
+                    >
+                      <span className="text-blue-600 align-top group-hover:text-pink-500">
+                        0{link.id}
+                      </span>
+                      {link.path}
+                    </motion.div>
+                  )}
+                </Link>
+              );
+            })}
+          </AnimatePresence>
         </div>
       </nav>
       <Hero />
