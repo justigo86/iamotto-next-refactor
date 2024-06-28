@@ -7,6 +7,7 @@ import image2 from "../../../public/PennyGalleryCapture2.jpg";
 import image3 from "../../../public/SmartBrainCapture.jpg";
 import image5 from "../../../public/CrownClothingHomepage.png";
 import { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 
 interface ProjectInfo {
   projectId: number;
@@ -66,6 +67,26 @@ const cardInfo: ProjectInfo[] = [
 ];
 
 const Projects = (): ReactElement => {
+  const cardFooterVariants = {
+    floatDown: {
+      bottom: 0,
+      width: "100%",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+  const cardDetails = {
+    initialDetails: {
+      opacity: 0,
+      scale: 0,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+    showDetails: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+
   AOS.init();
   return (
     <div
@@ -86,24 +107,28 @@ const Projects = (): ReactElement => {
       >
         {cardInfo.map((card: ProjectInfo) => {
           return (
-            <div
+            <motion.div
               key={card.projectId}
               //className="project-card"
               className="border-2 border-white flex flex-col items-center justify-center relative h-[50vh] w-[90vw] md:w-[50vw] rounded-[30px] overflow-hidden md:my-4 my-[1.5vh] mx-[1vw] min-w-[15rem]"
               data-aos="fade-left"
+              // variants={cardFooterVariants}
+              initial={["initialDetails"]}
+              whileHover={["floatDown", "showDetails"]}
             >
               <div
                 //className="project-card-header"
-                className="flex flex-col items-center justify-center w-full h-full filter grayscale transition duration-300 ease-in-out"
+                className="flex flex-col items-center justify-center w-full h-full filter grayscale transition duration-300 ease-in-out hover:keyframes."
                 style={{
                   backgroundImage: `url("${card.projectImg}")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center top",
                 }}
               >
-                <div
+                <motion.div
                   //className="project-details"
-                  className="w-[90%] bg-black bg-opacity-50 rounded-[20px] transform scale-0 transition duration-500 ease-in-out text-white whitespace-pre-wrap"
+                  className="w-[90%] bg-black bg-opacity-50 rounded-[20px] ease-in-out text-white whitespace-pre-wrap"
+                  variants={cardDetails}
                 >
                   <p
                     //className="project-details-text"
@@ -111,11 +136,12 @@ const Projects = (): ReactElement => {
                   >
                     {card.projectDetails}
                   </p>
-                </div>
+                </motion.div>
               </div>
-              <div
+              <motion.div
+                variants={cardFooterVariants}
                 //className="project-card-footer"
-                className="h-[8vh] w-[60vw] md:w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bottom-[18vh] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition duration-500 ease-in-out"
+                className="h-[8vh] w-[60vw] md:w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition duration-500 ease-in-out"
               >
                 <p
                   //className="project-footer-title"
@@ -150,8 +176,8 @@ const Projects = (): ReactElement => {
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           );
         })}
       </div>
