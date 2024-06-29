@@ -67,23 +67,33 @@ const cardInfo: ProjectInfo[] = [
 ];
 
 const Projects = (): ReactElement => {
+  const cardColorVariants = {
+    initialColor: {
+      grayscale: 100,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    hoverColor: {
+      grayscale: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
   const cardFooterVariants = {
     floatDown: {
       bottom: 0,
       width: "100%",
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
-  const cardDetails = {
+  const cardDetailsVariants = {
     initialDetails: {
       opacity: 0,
       scale: 0,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: "easeInOut" },
     },
     showDetails: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
 
@@ -103,7 +113,7 @@ const Projects = (): ReactElement => {
       </h1>
       <div
         //className="project-card-container"
-        className="flex items-center justify-center flex-col md:flex-wrap"
+        className="flex items-center justify-center md:flex-col flex-wrap"
       >
         {cardInfo.map((card: ProjectInfo) => {
           return (
@@ -115,20 +125,22 @@ const Projects = (): ReactElement => {
               // variants={cardFooterVariants}
               initial={["initialDetails"]}
               whileHover={["floatDown", "showDetails"]}
+              whileTap={["floatDown", "showDetails"]}
             >
-              <div
+              <motion.div
                 //className="project-card-header"
-                className="flex flex-col items-center justify-center w-full h-full filter grayscale transition duration-300 ease-in-out hover:keyframes."
+                className="flex flex-col items-center justify-center w-full h-full filter grayscale hover:grayscale-0"
                 style={{
                   backgroundImage: `url("${card.projectImg}")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center top",
                 }}
+                variants={cardColorVariants}
               >
                 <motion.div
                   //className="project-details"
-                  className="w-[90%] bg-black bg-opacity-50 rounded-[20px] ease-in-out text-white whitespace-pre-wrap"
-                  variants={cardDetails}
+                  className="w-[90%] bg-black bg-opacity-70 rounded-[20px] text-white whitespace-pre-wrap"
+                  variants={cardDetailsVariants}
                 >
                   <p
                     //className="project-details-text"
@@ -137,11 +149,11 @@ const Projects = (): ReactElement => {
                     {card.projectDetails}
                   </p>
                 </motion.div>
-              </div>
+              </motion.div>
               <motion.div
                 variants={cardFooterVariants}
                 //className="project-card-footer"
-                className="h-[8vh] w-[60vw] md:w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition duration-500 ease-in-out"
+                className="h-[8vh] w-[60vw] md:w-[24vw] rounded-[8px] absolute flex justify-center items-center text-center flex-col bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 transition"
               >
                 <p
                   //className="project-footer-title"
