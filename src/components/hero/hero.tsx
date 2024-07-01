@@ -112,7 +112,7 @@ const Hero = (): ReactElement => {
       >
         <li
           //className="hero-icons"
-          className="mr-2"
+          className="mr-4"
         >
           <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             <a
@@ -126,7 +126,7 @@ const Hero = (): ReactElement => {
             </a>
           </motion.div>
         </li>
-        <li className="mr-2">
+        <li className="mr-4">
           <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             <a
               id="mail"
@@ -139,7 +139,7 @@ const Hero = (): ReactElement => {
             </a>
           </motion.div>
         </li>
-        <li className="mr-2">
+        <li className="mr-4">
           <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             <a
               id="linked"
@@ -152,7 +152,7 @@ const Hero = (): ReactElement => {
             </a>
           </motion.div>
         </li>
-        <li className="mr-2">
+        <li className="mr-4">
           <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             <a
               id="resume"
